@@ -1,0 +1,103 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty-direct",
+    "source": "/home/user/.config/fastfetch/*.png", //PUT YOUR USERNAME IN USER
+    "padding": {
+      "top": 2,
+      "left": 3,
+      "right": 1
+    }
+  },
+  "display": {
+    "separator": ">  ",
+    "color": {
+      "separator": "red"
+    },
+    "constants": [
+      "─────────────────────────────────────────────────────────────────────",
+      "│\u001b[69C│\u001b[69D"
+    ]
+  },
+  "modules": [
+    {
+      "format": "{#1}{#keys}╭{$1}╮\u001b[70D {user-name-colored}{at-symbol-colored}{host-name-colored} 🖥  ",
+      "type": "title"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤\u001b[70D Software ",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#33}{icon} OS       ",
+      "type": "os"
+    },
+    {
+      "key": "{$2}{#34} Kernel   ",
+      "type": "kernel"
+    },
+    {
+      "key": "{$2}{#35}󰇄 Desktop  ",
+      "type": "wm"
+    },
+    {
+      "key": "{$2}{#36} Terminal ",
+      "type": "terminal"
+    },
+    {
+      "key": "{$2}{#31} Shell    ",
+      "type": "shell"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤\u001b[70D Hardware ",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#33}󰍛 CPU      ",
+      "type": "cpu",
+      "showPeCoreCount": true,
+      "temp": true
+    },
+    {
+      "key": "{$2}{#34}󰍛 GPU      ",
+      "type": "gpu"
+    },
+    {
+      "key": "{$2}{#35} Memory   ",
+      "type": "memory"
+    },
+    {
+      "key": "{$2}{#36} Keyboard ",
+      "type": "keyboard",
+      "ignores": [
+        "  HID Gaming Mouse Keyboard",
+        "Keychron Keychron C3 Pro Keyboard"
+      ]
+    },
+    {
+      "key": "{$2}{#31}󰍽 Mouse    ",
+      "type": "mouse",
+      "ignores": [
+        "Xbox 360 Controller for Windows Mouse",
+        "Keychron Keychron C3 Pro Mouse"
+      ]
+    },
+    {
+      "key": "{$2}{#32}󰊗 Gamepad  ",
+      "type": "gamepad"
+    },
+    {
+      "format": "{#1}{#keys}├{$1}┤",
+      "type": "custom"
+    },
+    {
+      "key": "{$2}{#39} Colors   ",
+      "type": "colors",
+      "symbol": "circle"
+    },
+    {
+      "format": "{#1}{#keys}╰{$1}╯",
+      "type": "custom"
+    }
+  ]
+}

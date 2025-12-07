@@ -1,0 +1,138 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "margin-top": 6,
+    "margin-left": 10,
+    "margin-right": 10,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        // "power-profiles-daemon",
+        // "temperature",
+        "network",
+        "tray",
+        "wireplumber",
+        "bluetooth",
+        "clock",
+        "custom/notification",
+        "custom/power"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}"
+    },
+    "mpris": {
+        "player": "spotify_player",
+        "format": "{player_icon} {position} {artist} - {title}",
+        "format-paused": "{status_icon} <i>{artist} - {title}</i>",
+        "player-icons": {
+            "spotify": "",
+            "spotify_player": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "artist-len": 15,
+        "title-len": 15,
+        "ignored-players": ["firefox", "zen-browser", "brave"]
+    },
+    "tray": {
+        "icon-size": 22,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/Caracas",
+        "format": "{:%a %d-%m-%Y %I:%M %p}",
+        "tooltip-format": "<small>{calendar}</small>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#CBA6F7'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "bluetooth": {
+        "format": "󰂲",
+        "format-on": "{icon}",
+        "format-off": "{icon}",
+        "format-connected": "{icon}",
+        "format-icons": {
+            "on": "󰂯",
+            "off": "󰂲",
+            "connected": "󰂱"
+        },
+        "on-click": "blueman-manager",
+        "tooltip-format-connected": "{controller_alias}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "network": {
+        "interface": "enp42s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "Ethernet ",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "wireplumber": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "Muted 󰝟 {icon} {format_source}",
+        "format-muted": "Muted 󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "Muted ",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pwvucontrol"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+        "menu-actions": {
+            "shutdown": "shutdown now",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    },
+    "custom/notification": {
+        "tooltip": "Notifications",
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='#f38ba8'><sup></sup></span>",
+            "none": "󰍥",
+            "dnd-notification": "󱙍<span foreground='#f38ba8'><sup></sup></span>",
+            "dnd-none": "󱙎",
+            "inhibited-notification": "<span foreground='#f38ba8'><sup></sup></span>",
+            "inhibited-none": "󰍥",
+            "dnd-inhibited-notification": "󱙍<span foreground='#f38ba8'><sup></sup></span>",
+            "dnd-inhibited-none": "󱙎"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+}
+}

@@ -1,0 +1,131 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    min-height: 0;
+    font-family: 'DepartureMono Nerd Font', 'Font Awesome 7 Brands', Arial, Helvetica, sans-serif;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#workspaces {
+    padding: 0.2rem;
+}
+
+#workspaces button{
+    padding: 0.5rem;       
+    margin: 0.2rem;
+    background-color: transparent;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+
+#workspaces button.active{
+    background: #6c7086;
+    border-radius: 1rem;
+}
+
+#workspaces button.urgent{
+    background-color: rgba(255, 88, 88, 0.4);
+}
+
+.modules-right, .modules-left{
+    background-color: #1e1e2e;
+    border-radius: 1rem;
+    padding: 0.2rem 0.6rem 0.2rem 0.6rem;   
+    margin: 0.3rem;
+    border: 0.095rem solid #cba6f7;
+    box-shadow: 0rem 0.2rem 0.4rem rgba(0,0,0,0.5);
+}
+
+#mpris,
+#idle_inhibitor,
+#cpu,
+#memory,
+#wireplumber,
+#tray,
+#clock,
+#bluetooth,
+#network,
+#custom-power,
+#custom-notification {
+    padding: 0.4rem;   
+    margin: 0.3rem;
+    background-color: transparent;
+    border-radius: 1rem;
+}
+
+#mpris:hover,
+#idle_inhibitor:hover,
+#wireplumber:hover,
+#bluetooth:hover,
+#custom-power:hover,
+#custom-notification:hover {
+    background-color: #6c7086;
+    border-radius: 1rem;
+}
+
+#network{
+    color: #b4befe
+}
+
+#mpris{
+    color: #a6e3a1;
+}
+
+#bluetooth{
+    color:#89b4fa;
+}
+
+#custom-power {
+    color: #f38ba8; 
+}
+
+#custom-notification {
+    color: #89dceb;
+}
+
+#wireplumber{
+    color:#fab387
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#power-menu {
+    background-color: transparent;
+    border: 0.095rem solid #cba6f7;
+    border-radius: 1rem;
+    margin: 0.3rem;
+    padding: 0.2rem;
+    box-shadow: 0rem 0.2rem 0.4rem rgba(0,0,0,0.5);
+}
+
+#power-menu menuitem {
+    padding: 0.2rem;
+    margin: 0.3rem;
+    border-radius: 1rem;
+}
+
+#power-menu menuitem:hover {
+    color: #fff;
+    background-color: #6c7086;
+}
+
+#power-menu menuitem:disabled {
+    color: #cba6f7;
+    opacity: 1.0;
+}
+
+#power-menu menuitem:disabled label {
+    font-size: 1.2rem;
+}
