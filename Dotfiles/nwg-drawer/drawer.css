@@ -1,0 +1,40 @@
+window {
+    background: none;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border: 0.1rem solid #cba6f7;
+    border-radius: 1rem;
+}
+
+entry {
+    background-color: rgba(17, 17, 27, 0.6)
+}
+
+button, image {
+    background: none;
+    border: none
+}
+
+button:hover {
+    background-color: #45475a
+}
+
+#category-button {
+    margin: 0 10px 0 10px
+}
+
+#pinned-box {
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #7f849c
+}
+
+#files-box {
+    padding: 5px;
+    border: 1px dotted #7f849c;
+    border-radius: 15px
+}
+
+#math-label {
+    font-weight: bold;
+    font-size: 16px
+}

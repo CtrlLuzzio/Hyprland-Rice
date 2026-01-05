@@ -45,11 +45,10 @@ window#waybar {
 #idle_inhibitor,
 #cpu,
 #memory,
+#network,
 #wireplumber,
 #tray,
 #clock,
-#bluetooth,
-#network,
 #custom-power,
 #custom-notification {
     padding: 0.4rem;   
@@ -58,26 +57,24 @@ window#waybar {
     border-radius: 1rem;
 }
 
-#mpris:hover,
-#idle_inhibitor:hover,
-#wireplumber:hover,
-#bluetooth:hover,
-#custom-power:hover,
-#custom-notification:hover {
-    background-color: #6c7086;
+#sysmonitor{
+    margin: 0.3rem;
+    background-color: transparent;
     border-radius: 1rem;
 }
 
-#network{
-    color: #b4befe
+#mpris:hover,
+#idle_inhibitor:hover,
+#wireplumber:hover,
+#custom-power:hover,
+#custom-notification:hover,
+#sysmonitor:hover {
+    background-color: #45475a;
+    border-radius: 1rem;
 }
 
-#mpris{
-    color: #a6e3a1;
-}
-
-#bluetooth{
-    color:#89b4fa;
+#sysmonitor{
+    color: #f2cdcd;
 }
 
 #custom-power {
@@ -102,7 +99,7 @@ window#waybar {
 }
 
 #power-menu {
-    background-color: transparent;
+    background-color: #1e1e2e;
     border: 0.095rem solid #cba6f7;
     border-radius: 1rem;
     margin: 0.3rem;
@@ -114,11 +111,13 @@ window#waybar {
     padding: 0.2rem;
     margin: 0.3rem;
     border-radius: 1rem;
+    transition: all 0.2s ease;
+    color: #cdd6f4;
 }
 
 #power-menu menuitem:hover {
-    color: #fff;
-    background-color: #6c7086;
+    color: #1e1e2e;
+    background-color: #cba6f7;
 }
 
 #power-menu menuitem:disabled {

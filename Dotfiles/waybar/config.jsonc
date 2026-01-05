@@ -15,20 +15,46 @@
     "modules-right": [
         // "power-profiles-daemon",
         // "temperature",
-        "network",
+        "group/sysmonitor",
         "tray",
-        "wireplumber",
-        "bluetooth",
         "clock",
+        "wireplumber",
         "custom/notification",
         "custom/power"
     ],
     // Modules configuration
+    "group/sysmonitor": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "network"
+        ]
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "on-click": "missioncenter"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "on-click": "missioncenter"
+    },
+    "network": {
+        "format": " {bandwidthUpBytes}   {bandwidthDownBytes}",
+        "on-click": "missioncenter"
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}"
+        "format": "{name}",
+        // "workspace-taskbar": {
+        //     "enable": true,
+        //     "format": " {icon}",
+        //     "icon-size": 14,
+        // }
     },
     "mpris": {
         "player": "spotify_player",
@@ -73,15 +99,6 @@
         "tooltip-format-connected": "{controller_alias}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
-    "network": {
-        "interface": "enp42s0",
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "Ethernet ",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format-disconnected": "Disconnected",
-        "on-click": "nm-connection-editor"
-    },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}  {format_source}",
@@ -105,8 +122,8 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
         "menu-actions": {
-            "shutdown": "shutdown now",
-            "reboot": "reboot",
+            "shutdown": "hyprshutdown -t 'Shutting down...' -p 'shutdown now'",
+            "reboot": "hyprshutdown -t 'Restarting...' -p 'reboot'",
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate"
         }

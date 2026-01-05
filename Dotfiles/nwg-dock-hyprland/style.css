@@ -1,0 +1,42 @@
+/* @import '/catppuccin-mocha.css'; */
+
+window {
+  	background: #1e1e2e;
+	border-radius: 1rem;
+	border: 0.095rem solid #cba6f7;
+    box-shadow: 0rem 0.2rem 0.4rem rgba(0,0,0,0.5);
+}
+
+#box {
+  /* Define attributes of the box surrounding icons here */
+  padding: 0.6rem 0.6rem 0.6rem 0.6rem;
+}
+
+#active {
+	/* This is to underline the button representing the currently active window */
+	border-bottom: solid 0.1rem;
+	border-color: #cba6f7
+}
+
+button, image {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	color: #999
+}
+
+button {
+	padding: 0.4rem;
+	margin: 0.3rem;
+	color: #eee;
+  font-size: 12px
+}
+
+button:hover {
+	background-color: #6c7086;
+	border-radius: 0.4rem;
+}
+
+button:focus {
+	box-shadow: none
+}
